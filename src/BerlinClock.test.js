@@ -9,8 +9,14 @@ configure({ adapter: new Adapter() });
 
 describe('Berlin clock', function(){
 
-  it('renders without crashing', () => {
-    shallow(<BerlinClock />);
+  it('at 00:00:00 should have all the lamp to be OFF (OOOO)', () => {
+    var wrapper = shallow(<BerlinClock />);
+    var clock = wrapper.instance();
+    var time = new Date(2019, 6, 7, 0, 0, 0);
+
+    clock.setTime(time);
+
+    expect(clock.bottomMinutes()).toBe('OOOO');
   });
 
 });
