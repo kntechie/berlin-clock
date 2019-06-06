@@ -19,4 +19,14 @@ describe('Berlin clock', function(){
     expect(clock.bottomMinutes()).toBe('OOOO');
   });
 
+  it('at 23:59:59 should have all the lamp to be ON (YYYY)', () => {
+    var wrapper = shallow(<BerlinClock />);
+    var clock = wrapper.instance();
+    var time = new Date(2019, 6, 7, 23, 59, 59);
+
+    clock.setTime(time);
+
+    expect(clock.bottomMinutes()).toBe('YYYY');
+  });
+
 });
