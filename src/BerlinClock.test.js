@@ -159,5 +159,30 @@ describe('Berlin clock', function(){
 
   });
 
+  describe('Five hours row', function(){
+
+    beforeEach(function(){
+        wrapper = shallow(<BerlinClock />);
+        clock = wrapper.instance();
+    });
+
+    it('at 00:00:00 should have all the lamp to be OFF (OOOO)', () => {
+        var time = new Date(2019, 6, 7, 0, 0, 0);
+    
+        clock.setTime(time);
+    
+        expect(clock.topHours()).toBe('OOOO');
+    });
+
+    it('at 23:59:59 should have all the lamp to be ON (RRRR)', () => {
+      var time = new Date(2019, 6, 7, 23, 59, 59);
+  
+      clock.setTime(time);
+  
+      expect(clock.topHours()).toBe('RRRR');
+    });
+
+  });
+
   
 });

@@ -34,6 +34,10 @@ class BerlinClock extends React.Component {
     return this.getOnOffStatus(4, this.state.hours % 5, HOURS_LIGHT_ON);
   }
 
+  topHours()   {
+    return this.getOnOffStatus(4, Math.floor(this.state.hours / 5), HOURS_LIGHT_ON);
+  }
+
   getOnOffStatus(lamps, lightsOn, onSign){
     var status = "", i = 0;
     for (i = 0; i < lightsOn; i++) {
