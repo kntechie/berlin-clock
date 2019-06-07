@@ -61,4 +61,21 @@ describe('Berlin clock', function(){
 
   });
 
+  describe('Five minutes row', function(){
+
+    beforeEach(function(){
+        wrapper = shallow(<BerlinClock />);
+        clock = wrapper.instance();
+    });
+
+    it('at 00:00:00 should have all the lamp to be OFF (OOOOOOOOOOO)', () => {
+        var time = new Date(2019, 6, 7, 0, 0, 0);
+    
+        clock.setTime(time);
+    
+        expect(clock.topMinutes()).toBe('OOOOOOOOOOO');
+    });
+
+  });
+
 });
