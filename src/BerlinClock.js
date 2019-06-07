@@ -26,7 +26,7 @@ class BerlinClock extends React.Component {
   }
 
   topMinutes() {
-    return this.getOnOffStatus(11, Math.floor(this.state.minutes / 5), MINUTES_LIGHT_ON);
+    return this.getOnOffStatus(11, Math.floor(this.state.minutes / 5), MINUTES_LIGHT_ON).replace(/YYY/g, 'YYR');
   }
 
   getOnOffStatus(lamps, lightsOn, onSign){
