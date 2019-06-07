@@ -208,7 +208,7 @@ describe('Berlin clock', function(){
 
   });
 
-  describe('Five hours row', function(){
+  describe('Seconds row', function(){
 
     beforeEach(function(){
         wrapper = shallow(<BerlinClock />);
