@@ -248,6 +248,30 @@ describe('Berlin clock', function(){
         expect(clock.convertToBerlinTime()).toBe('YOOOOOOOOOOOOOOOOOOOOOOO');
     });
 
+    it('at 23:59:59 should have the lamp to be ORRRRRRROYYRYYRYYRYYYYYY', () => {
+        var time = new Date(2019, 6, 7, 23, 59, 59);
+    
+        clock.setTime(time);
+    
+        expect(clock.convertToBerlinTime()).toBe('ORRRRRRROYYRYYRYYRYYYYYY');
+    });
+
+    it('at 16:50:06 should have the lamp to be YRRROROOOYYRYYRYYRYOOOOO', () => {
+        var time = new Date(2019, 6, 7, 16, 50, 6);
+
+        clock.setTime(time);
+
+        expect(clock.convertToBerlinTime()).toBe('YRRROROOOYYRYYRYYRYOOOOO');
+    });
+
+    it('at 11:37:01 should have the lamp to be ORROOROOOYYRYYRYOOOOYYOO', () => {
+        var time = new Date(2019, 6, 7, 11, 37, 1);
+
+        clock.setTime(time);
+
+        expect(clock.convertToBerlinTime()).toBe('ORROOROOOYYRYYRYOOOOYYOO');
+    });
+
   });
   
 });
