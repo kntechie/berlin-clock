@@ -40,8 +40,8 @@ class BerlinClock extends React.Component {
   }
 
   seconds() {
-    if (this.state.seconds % 2 === 0) 
-      return SECONDS_LIGHT_ON;
+    if (this.state.seconds % 2 === 0) return SECONDS_LIGHT_ON;
+    else return LIGHT_OFF;
   }
 
   getOnOffStatus(lamps, lightsOn, onSign){
