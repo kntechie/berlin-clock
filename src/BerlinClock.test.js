@@ -100,7 +100,7 @@ describe('Berlin clock', function(){
       expect(clock.topMinutes()).toBe('YYRYOOOOOOO');
     });
 
-    it('at 12:35:00 should have all the lamp to be OFF (YYRYYRYOOOO)', () => {
+    it('at 12:35:00 should have some of the lamp to be OFF (YYRYYRYOOOO)', () => {
       var time = new Date(2019, 6, 7, 12, 35, 0);
   
       clock.setTime(time);
@@ -109,5 +109,5 @@ describe('Berlin clock', function(){
     });
 
   });
-
+  
 });
