@@ -207,5 +207,22 @@ describe('Berlin clock', function(){
     });
 
   });
+
+  describe('Five hours row', function(){
+
+    beforeEach(function(){
+        wrapper = shallow(<BerlinClock />);
+        clock = wrapper.instance();
+    });
+
+    it('at 00:00:00 should have the lamp to be ON (Y)', () => {
+        var time = new Date(2019, 6, 7, 0, 0, 0);
+    
+        clock.setTime(time);
+    
+        expect(clock.seconds()).toBe('Y');
+    });
+
+  });
   
 });

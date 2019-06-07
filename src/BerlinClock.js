@@ -3,6 +3,7 @@ import './BerlinClock.css';
 
 const MINUTES_LIGHT_ON = "Y";
 const HOURS_LIGHT_ON = "R";
+const SECONDS_LIGHT_ON = "Y";
 const LIGHT_OFF = "O";
 
 class BerlinClock extends React.Component {
@@ -36,6 +37,11 @@ class BerlinClock extends React.Component {
 
   topHours()   {
     return this.getOnOffStatus(4, Math.floor(this.state.hours / 5), HOURS_LIGHT_ON);
+  }
+
+  seconds() {
+    if (this.state.seconds % 2 === 0) 
+      return SECONDS_LIGHT_ON;
   }
 
   getOnOffStatus(lamps, lightsOn, onSign){
