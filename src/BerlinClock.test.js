@@ -84,6 +84,30 @@ describe('Berlin clock', function(){
       expect(clock.topMinutes()).toBe('YYRYYRYYRYY');
     });
 
+    it('at 12:04:00 should have all the lamp to be OFF (OOOOOOOOOOO)', () => {
+      var time = new Date(2019, 6, 7, 12, 4, 0);
+  
+      clock.setTime(time);
+  
+      expect(clock.topMinutes()).toBe('OOOOOOOOOOO');
+    });
+
+    it('at 12:23:00 should have some of the lamp to be ON (YYRYOOOOOOO)', () => {
+      var time = new Date(2019, 6, 7, 12, 23, 0);
+  
+      clock.setTime(time);
+  
+      expect(clock.topMinutes()).toBe('YYRYOOOOOOO');
+    });
+
+    it('at 12:35:00 should have all the lamp to be OFF (YYRYYRYOOOO)', () => {
+      var time = new Date(2019, 6, 7, 12, 35, 0);
+  
+      clock.setTime(time);
+  
+      expect(clock.topMinutes()).toBe('YYRYYRYOOOO');
+    });
+
   });
 
 });
