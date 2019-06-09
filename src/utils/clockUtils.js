@@ -8,7 +8,7 @@ export const getOnOffLamps = (totalLamps, lampsOn) => {
       row += constants.YELLOW_LAMP;
     }
 
-    for (let j = 0; j < lampsOff; j++) {
+    for (let i = 0; i < lampsOff; i++) {
       row += constants.LAMP_OFF;
     }
     
