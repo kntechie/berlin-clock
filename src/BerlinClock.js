@@ -1,72 +1,62 @@
 import React from 'react';
-import './BerlinClock.css';
-
-const MINUTES_LIGHT_ON = "Y";
-const HOURS_LIGHT_ON = "R";
-const SECONDS_LIGHT_ON = "Y";
-const LIGHT_OFF = "O";
+import moment from 'moment';
+import constants from './utils/constants';
+import Seconds from './components/Seconds';
+import Minutes from './components/Minutes';
+import Hours from './components/Hours';
 
 class BerlinClock extends React.Component {
 
   constructor(props) {
       super(props);
       this.state = {
-
+          hours: 0,
+          minutes: 0,
+          seconds: 0
       }
+      this.seconds = React.createRef();
+      this.minutes = React.createRef();
+      this.hours = React.createRef();
   }
 
-  setTime(time) {
+  setTime(hours, minutes, seconds) {
     this.setState({
-      hours: time.getHours(),
-      minutes: time.getMinutes(),
-      seconds: time.getSeconds()
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds
     });
   }
 
-  bottomMinutes() {
-    return this.getOnOffStatus(4, this.state.minutes % 5, MINUTES_LIGHT_ON);
+  convertDigitalToBerlinTime(){
+    console.log(this.seconds.current.seconds());
+    console.log(this.minutes.current.topMinutes());
+    console.log(this.minutes.current.bottomMinutes());
+    console.log(this.hours.current.topHours());
+    console.log(this.hours.current.bottomHours());
   }
 
-  topMinutes() {
-    return this.getOnOffStatus(11, Math.floor(this.state.minutes / 5), MINUTES_LIGHT_ON).replace(/YYY/g, 'YYR');
+  updateClock(time){
+    const [hours, minutes, seconds] = time ? time.split(':') : moment().format('H:m:s').split(':');
+    this.setTime(hours, minutes, seconds);
+    this.convertDigitalToBerlinTime();
   }
 
-  bottomHours() {
-    return this.getOnOffStatus(4, this.state.hours % 5, HOURS_LIGHT_ON);
+  componentDidMount() {
+      this.intervalId = setInterval(() => this.updateClock(), constants.ONE_SECOND);
   }
 
-  topHours()   {
-    return this.getOnOffStatus(4, Math.floor(this.state.hours / 5), HOURS_LIGHT_ON);
-  }
-
-  seconds() {
-    if (this.state.seconds % 2 === 0) return SECONDS_LIGHT_ON;
-    else return LIGHT_OFF;
-  }
-
-  convertToBerlinTime(){
-    return (this.seconds() + this.topHours() + this.bottomHours() + this.topMinutes() + this.bottomMinutes());
-  }
-
-  getOnOffStatus(lamps, lightsOn, onSign){
-    var status = "", i = 0;
-    for (i = 0; i < lightsOn; i++) {
-      status += onSign;
-    }
-    for (i = 0; i < (lamps - lightsOn); i++) {
-      status += LIGHT_OFF;
-    }
-    return status;
+  componentWillUnmount() {
+      clearInterval(this.intervalId);
   }
 
   render() {
-
-    return (
-     <div id="berlinClock">
-         
-     </div>
-    );
-
+      return (
+        <div id="berlinClock">
+            <Seconds ref={this.seconds} seconds = {this.state.seconds}/>
+            <Hours ref={this.hours} hours = {this.state.hours}/>
+            <Minutes ref={this.minutes} minutes = {this.state.minutes}/>
+        </div>
+      );
   }
 
 }
