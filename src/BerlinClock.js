@@ -19,6 +19,19 @@ class BerlinClock extends React.Component {
       this.hours = React.createRef();
   }
 
+  componentDidMount() {
+    this.intervalId = setInterval(() => this.updateClock(), constants.ONE_SECOND);
+  }
+
+  componentWillUnmount() {
+      clearInterval(this.intervalId);
+  }
+
+  updateClock(time){
+    const [hours, minutes, seconds] = time ? time.split(':') : moment().format('H:m:s').split(':');
+    this.setTime(hours, minutes, seconds);
+  }
+
   setTime(hours, minutes, seconds) {
     this.setState({
       hours: hours,
@@ -30,19 +43,6 @@ class BerlinClock extends React.Component {
   convertDigitalToBerlinTime(){
     return this.seconds.current.seconds() + this.minutes.current.topMinutes() + this.minutes.current.bottomMinutes() +
       this.hours.current.topHours() + this.hours.current.bottomHours();
-  }
-
-  updateClock(time){
-    const [hours, minutes, seconds] = time ? time.split(':') : moment().format('H:m:s').split(':');
-    this.setTime(hours, minutes, seconds);
-  }
-
-  componentDidMount() {
-      this.intervalId = setInterval(() => this.updateClock(), constants.ONE_SECOND);
-  }
-
-  componentWillUnmount() {
-      clearInterval(this.intervalId);
   }
 
   render() {
