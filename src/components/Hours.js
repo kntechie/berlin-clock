@@ -16,7 +16,7 @@ class Hours extends React.Component {
         if(row){
             let lamps = row.split("");
             const rows = lamps.map((lamp, index) => {
-                return <div key={index} className={"light " + (lamp === constants.YELLOW_LAMP || lamp === constants.RED_LAMP ? constants.LAMP_ON_CLASS : constants.LAMP_OFF_CLASS)}></div>;
+                return <div key={index} className={"light " + (lamp === constants.RED_LAMP ? constants.LAMP_ON_CLASS : constants.LAMP_OFF_CLASS)}></div>;
             });
             return rows;
         } 
