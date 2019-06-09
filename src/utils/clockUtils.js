@@ -16,19 +16,13 @@ export const getOnOffLamps = (totalLamps, lampsOn) => {
 }
 
 export const modulo5 = (number) => {
-    if(number){
-        return number % constants.FIVE;
-    } 
+    return number % constants.FIVE;
 }
 
 export const divide5 = (number) => {
-    if(number){
-        return number / constants.FIVE;
-    } 
+    return number / constants.FIVE;
 }
 
 export const isEven = (number) => {
-    if(number){
-        return number % constants.TWO;
-    } 
+    return number % constants.TWO;
 }
