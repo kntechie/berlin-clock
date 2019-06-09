@@ -5,7 +5,7 @@ import { getOnOffLamps, modulo5, divide5 } from '../utils/clockUtils';
 class Hours extends React.Component {
 
     bottomHours() {
-        return getOnOffLamps(constants.TOTAL_FIVE_HOURS_LAMP, modulo5(this.props.hours));
+        return getOnOffLamps(constants.TOTAL_SINGLE_HOURS_LAMP, modulo5(this.props.hours));
     }
 
     topHours() {
