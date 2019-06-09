@@ -28,17 +28,13 @@ class BerlinClock extends React.Component {
   }
 
   convertDigitalToBerlinTime(){
-    console.log(this.seconds.current.seconds());
-    console.log(this.minutes.current.topMinutes());
-    console.log(this.minutes.current.bottomMinutes());
-    console.log(this.hours.current.topHours());
-    console.log(this.hours.current.bottomHours());
+    return this.seconds.current.seconds() + this.minutes.current.topMinutes() + this.minutes.current.bottomMinutes() +
+      this.hours.current.topHours() + this.hours.current.bottomHours();
   }
 
   updateClock(time){
     const [hours, minutes, seconds] = time ? time.split(':') : moment().format('H:m:s').split(':');
     this.setTime(hours, minutes, seconds);
-    this.convertDigitalToBerlinTime();
   }
 
   componentDidMount() {
