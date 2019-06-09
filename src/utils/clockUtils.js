@@ -1,5 +1,4 @@
 import constants from './constants';
-import React from 'react';
 
 export const getOnOffLamps = (totalLamps, lampsOn) => {
     let row = "";
@@ -14,15 +13,6 @@ export const getOnOffLamps = (totalLamps, lampsOn) => {
     }
     
     return row;
-}
-
-export const formClockRow = (onStatus, onSign) => {
-    if(onStatus){
-        var lamps = onStatus.split("");
-        lamps.map(function(section, index){
-            return <div key={index} className={"light " + (section === onSign ? constants.LAMP_ON_CLASS : constants.LAMP_OFF_CLASS)}></div>
-        });
-    } 
 }
 
 export const modulo5 = (number) => {
