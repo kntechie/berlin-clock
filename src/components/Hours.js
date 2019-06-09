@@ -1,15 +1,15 @@
 import React from 'react';
 import constants from '../utils/constants';
-import { getOnOffLamps } from '../utils/clockUtils';
+import { getOnOffLamps, modulo5, divide5 } from '../utils/clockUtils';
 
 class Hours extends React.Component {
 
     bottomHours() {
-        return getOnOffLamps(4, this.props.hours % 5, constants.RED_LAMP);
+        return getOnOffLamps(constants.TOTAL_FIVE_HOURS_LAMP, modulo5(this.props.hours));
     }
 
     topHours() {
-        return getOnOffLamps(4, Math.floor(this.props.hours / 5), constants.RED_LAMP);
+        return getOnOffLamps(constants.TOTAL_FIVE_HOURS_LAMP, Math.floor(divide5(this.props.hours)));
     }
 
     formHoursRow(row) {
