@@ -9,6 +9,13 @@
   <a href="https://travis-ci.org/kntechie/berlin-clock"><img src="https://travis-ci.org/kntechie/berlin-clock.svg?branch=master" alt="travis">
   <img src="https://img.shields.io/npm/v/standard.svg" alt="npm version">
 </p>
+  
+## Table of Contents
+- About this Kata
+- Quick start
+  - [Install](#install)
+  - [Usage](#usage)
+  - [What you might do if you're clever](#what-you-might-do-if-youre-clever)
 
 
 
