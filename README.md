@@ -24,7 +24,7 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
 - Quick start
   - [Install](#install)
   - [Usage](#usage)
-  - [What you might do if you're clever](#what-you-might-do-if-youre-clever)
+  - [Tests and Coverage](#Tests-and-coverage)
 
 ## Install
 
@@ -34,3 +34,21 @@ Install all the dependencies for the project
 $ npm install
 ```
 
+## Usage
+
+For running the application ?
+
+```bash
+$ npm start
+```
+This opens the browser and runs the application in http://localhost:3000
+
+## Tests and Coverage
+
+```bash
+$ npm run test
+```
+
+```bash
+$ npm run test:coverage
+```
