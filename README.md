@@ -5,11 +5,6 @@
   <br>
 </h1>
 
-<p align="center">
-  <a href="https://travis-ci.org/kntechie/berlin-clock"><img src="https://travis-ci.org/kntechie/berlin-clock.svg?branch=master" alt="travis">
-  <img src="https://img.shields.io/npm/v/standard.svg" alt="npm version">
-</p>
-
 ## Table of Contents
 
 - [About this Kata](#about-this-kata)
