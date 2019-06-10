@@ -21,6 +21,7 @@ The next two rows represent hours. The upper row represents 5 hour blocks and is
 The final two rows represent the minutes. The upper row represents 5 minute blocks, and is made up of 11 lamps- every third lamp is red, the rest are yellow. The bottom row represents 1 minute blocks, and is made up of 4 yellow lamps.
   
 ## Table of Contents
+
 - Quick start
   - [Install](#install)
   - [Usage](#usage)
@@ -45,9 +46,13 @@ This opens the browser and runs the application in http://localhost:3000
 
 ## Tests and Coverage
 
+1. For running `tests`
+
 ```bash
 $ npm run test
 ```
+
+2. For `coverage` reports
 
 ```bash
 $ npm run test:coverage
