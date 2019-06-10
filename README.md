@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/51542337/59164188-1df46300-8b0a-11e9-9f95-ae3a3d46b091.png" alt="Standard - JavaScript Style Guide" width="200">
+  <img src="https://user-images.githubusercontent.com/14254413/59166945-ea77ff80-8b2e-11e9-8776-d99bdff3ae6f.png" alt="Standard - JavaScript Style Guide" width="200">
   <br>
   Berlin Clock
   <br>
