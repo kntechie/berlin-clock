@@ -26,5 +26,11 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
   - [Usage](#usage)
   - [What you might do if you're clever](#what-you-might-do-if-youre-clever)
 
+## Install
 
+Install all the dependencies for the project
+
+```bash
+$ npm install
+```
 
